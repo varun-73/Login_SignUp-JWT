@@ -38,7 +38,7 @@ export default function Cards() {
   return (
     <>
       <div className="private">
-        <h1>Super Secret Page</h1>
+        <h1>Welcome User...!</h1>
         <button onClick={logOut}>Log out</button>
       </div>
       <ToastContainer />

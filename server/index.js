@@ -15,7 +15,7 @@ app.listen(4000, (err) => {
 });
 
 mongoose
-  .connect("mongodb://localhost:27017/jwt", {
+  .connect("mongodb+srv://varun132:varun132@varuncluster.marvper.mongodb.net/jwt", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
