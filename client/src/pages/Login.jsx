@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
-function Register() {
-  const [cookies] = useCookies(["cookie-name"]);
+import { useCookies } from "react-cookie";
+import { ToastContainer, toast } from "react-toastify";
+
+function Login() {
+  const [cookies] = useCookies([]);
   const navigate = useNavigate();
   useEffect(() => {
     if (cookies.jwt) {
@@ -21,7 +22,7 @@ function Register() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/register",
+        "http://localhost:4000/login",
         {
           ...values,
         },
@@ -42,7 +43,7 @@ function Register() {
   };
   return (
     <div className="container">
-      <h2>Register Account</h2>
+      <h2>Login to your Account</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
           <label htmlFor="email">Email</label>
@@ -68,7 +69,7 @@ function Register() {
         </div>
         <button type="submit">Submit</button>
         <span>
-          Already have an account ?<Link to="/login"> Login</Link>
+          Don't have an account ?<Link to="/register"> Register </Link>
         </span>
       </form>
       <ToastContainer />
@@ -76,4 +77,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;

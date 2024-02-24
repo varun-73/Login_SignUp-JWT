@@ -22,6 +22,7 @@ mongoose
   .then(() => {
     console.log("DB Connetion Successfull");
   })
+  
   .catch((err) => {
     console.log(err.message);
   });
